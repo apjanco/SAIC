@@ -1,0 +1,101 @@
+1674762347898	geckodriver	INFO	Listening on 127.0.0.1:56181
+1674762348408	mozrunner::runner	INFO	Running command: "/snap/firefox/current/firefox.launcher" "--marionette" "--remote-debugging-port" "50133" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofiletlpAtK"
+Gtk-Message: 14:45:48.437: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+amdgpu: os_same_file_description couldn't determine if two DRM fds reference the same file description.
+If they do, bad things may happen!
+1674762349473	Marionette	INFO	Marionette enabled
+1674762349480	Marionette	INFO	Listening on port 38305
+Read port: 38305
+ATTENTION: default value of option mesa_glthread overridden by environment.
+WebDriver BiDi listening on ws://127.0.0.1:50133
+1674762349697	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofiletlpAtK/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50133/devtools/browser/054397fe-9551-4759-a8c8-50bddb934512
+1674762360381	Marionette	INFO	Stopped listening on port 38305
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+console.error: (new AbortError("IndexedDB: main/url-classifier-skip-urls list() IndexedDB:  execute() A request was aborted, for example through a call to IDBTransaction.abort.", "resource://services-settings/IDBHelpers.jsm", 18))
+1674762574732	geckodriver	INFO	Listening on 127.0.0.1:46777
+1674762575118	mozrunner::runner	INFO	Running command: "/snap/firefox/current/firefox.launcher" "--marionette" "--remote-debugging-port" "37625" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileW4w389"
+Gtk-Message: 14:49:35.166: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+amdgpu: os_same_file_description couldn't determine if two DRM fds reference the same file description.
+If they do, bad things may happen!
+1674762575788	Marionette	INFO	Marionette enabled
+1674762575792	Marionette	INFO	Listening on port 37381
+Read port: 37381
+ATTENTION: default value of option mesa_glthread overridden by environment.
+WebDriver BiDi listening on ws://127.0.0.1:37625
+1674762575968	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileW4w389/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:37625/devtools/browser/044144ed-6669-4f35-965e-eb805ebc34fd
+JavaScript warning: https://www.senado.leg.br/atividade/baseshist/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.senado.leg.br."
+1674762832468	geckodriver	INFO	Listening on 127.0.0.1:60727
+1674762832866	mozrunner::runner	INFO	Running command: "/snap/firefox/current/firefox.launcher" "--marionette" "--remote-debugging-port" "54421" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile5S3GHg"
+Gtk-Message: 14:53:52.914: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+amdgpu: os_same_file_description couldn't determine if two DRM fds reference the same file description.
+If they do, bad things may happen!
+1674762833545	Marionette	INFO	Marionette enabled
+1674762833548	Marionette	INFO	Listening on port 44629
+Read port: 44629
+ATTENTION: default value of option mesa_glthread overridden by environment.
+WebDriver BiDi listening on ws://127.0.0.1:54421
+1674762833761	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile5S3GHg/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:54421/devtools/browser/48c961c3-e1aa-4fa2-a831-a6c66946ef93
+JavaScript warning: https://www.senado.leg.br/atividade/baseshist/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1674762860132	geckodriver	INFO	Listening on 127.0.0.1:51271
+1674762860486	mozrunner::runner	INFO	Running command: "/snap/firefox/current/firefox.launcher" "--marionette" "--remote-debugging-port" "49191" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilexHYuQc"
+Gtk-Message: 14:54:20.534: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+amdgpu: os_same_file_description couldn't determine if two DRM fds reference the same file description.
+If they do, bad things may happen!
+1674762861245	Marionette	INFO	Marionette enabled
+1674762861248	Marionette	INFO	Listening on port 40685
+ATTENTION: default value of option mesa_glthread overridden by environment.
+Read port: 40685
+WebDriver BiDi listening on ws://127.0.0.1:49191
+1674762861413	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilexHYuQc/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:49191/devtools/browser/387ed292-7a88-4b31-8888-946e6a974060
+JavaScript warning: https://www.senado.leg.br/atividade/baseshist/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.senado.leg.br."
+JavaScript warning: https://www.senado.leg.br/atividade/baseshist/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1674763000369	geckodriver	INFO	Listening on 127.0.0.1:52883
+1674763000770	mozrunner::runner	INFO	Running command: "/snap/firefox/current/firefox.launcher" "--marionette" "--remote-debugging-port" "34631" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileUd9CGM"
+Gtk-Message: 14:56:40.819: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+amdgpu: os_same_file_description couldn't determine if two DRM fds reference the same file description.
+If they do, bad things may happen!
+1674763001658	Marionette	INFO	Marionette enabled
+1674763001662	Marionette	INFO	Listening on port 36163
+Read port: 36163
+ATTENTION: default value of option mesa_glthread overridden by environment.
+WebDriver BiDi listening on ws://127.0.0.1:34631
+1674763001861	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileUd9CGM/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:34631/devtools/browser/8ec72863-3faf-44a8-aba5-22340c6e28d0
+JavaScript warning: https://www.senado.leg.br/atividade/baseshist/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.senado.leg.br."
+JavaScript warning: https://www.senado.leg.br/atividade/baseshist/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.senado.leg.br."
+JavaScript warning: https://www.senado.leg.br/atividade/baseshist/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.senado.leg.br."
+JavaScript warning: https://www.senado.leg.br/atividade/baseshist/js/jquery-1.10.2.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.error: "Unable to find target with innerWindowId:4294967300"
+console.error: "Unable to find target with innerWindowId:4294967300"
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 572: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1674767370205	Marionette	INFO	Stopped listening on port 37381
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 572: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1674767373152	Marionette	INFO	Stopped listening on port 40685
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 572: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1674767375421	Marionette	INFO	Stopped listening on port 36163
+1674767378349	Marionette	INFO	Stopped listening on port 44629
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
