@@ -34,6 +34,7 @@ terms = [
 patterns = [nlp.make_doc(text) for text in terms]
 matcher.add("TerminologyList", patterns)
 df_data = []
+errors = []
 for person in tqdm(data.keys(), total=len(list(data.keys()))):
     row = {}
     doc = nlp(data[person])
@@ -73,6 +74,7 @@ for person in tqdm(data.keys(), total=len(list(data.keys()))):
             FAIXA_RENDA = (start, end)
         if doc[start:end].text == "ATIVIDADE":
             ATIVIDADE = (start, end)
+            DESTINATÁRIO = ATIVIDADE
         if doc[start:end].text == "DESTINATÁRIO":
             DESTINATÁRIO = (start, end)
         if doc[start:end].text == "CATÁLOGO":
@@ -82,30 +84,50 @@ for person in tqdm(data.keys(), total=len(list(data.keys()))):
         if doc[start:end].text == "SUGESTÃO":
             SUGESTÃO = (start, end)
     
-    row['ORIGEM'] = doc[ORIGEM[1]+1:DATA[0]].text.strip()
-    row['DATA'] = doc[DATA[1]+1:FORMUL[0]].text.strip()
-    row['FORMUL'] = doc[FORMUL[1]+1:DV[0]].text.strip()
-    row['DV'] = doc[DV[1]+1:TIPO[0]].text.strip()
-    row['TIPO'] = doc[TIPO[1]+1:NOME[0]].text.replace('\n','').strip()
-    row['NOME'] = doc[NOME[1]+1:ENDEREÇO[0]].text.replace('\n','').strip()
-    row['ENDEREÇO'] = doc[ENDEREÇO[1]+1:MUNICIPIO[0]].text.replace('\n','').strip()
-    row['MUNICIPIO'] = doc[MUNICIPIO[1]+1:UF[0]].text.replace('\n','').strip()
-    row['UF'] = doc[UF[1]+1:CEP[0]].text.replace('\n','').strip()
-    row['CEP'] = doc[CEP[1]+1:SEXO[0]].text.replace('\n','').strip()
-    row['SEXO'] = doc[SEXO[1]+1:MORADOR[0]].text.replace('\n','').strip()
-    row['MORADOR'] = doc[MORADOR[1]+1:INSTRUÇÃO[0]].text.replace('\n','').strip()
-    row['INSTRUÇÃO'] = doc[INSTRUÇÃO[1]+1:ESTADO_CIVIL[0]].text.replace('\n','').strip()
-    row['ESTADO_CIVIL'] = doc[ESTADO_CIVIL[1]+1:FAIXA_ETÁRIA[0]].text.replace('\n','').strip()
-    row['FAIXA_ETÁRIA'] = doc[FAIXA_ETÁRIA[1]+1:FAIXA_RENDA[0]].text.replace('\n','').strip()
-    row['FAIXA_RENDA'] = doc[FAIXA_RENDA[1]+1:ATIVIDADE[0]].text.replace('\n','').strip()
-    try:
+    if not any(word in doc[ORIGEM[1]+1:DATA[0]].text.strip() for word in terms):
+        row['ORIGEM'] = doc[ORIGEM[1]+1:DATA[0]].text.strip()
+    if not any(word in doc[DATA[1]+1:FORMUL[0]].text.strip() for word in terms):
+        row['DATA'] = doc[DATA[1]+1:FORMUL[0]].text.strip()
+    if not any(word in doc[FORMUL[1]+1:DV[0]].text.strip() for word in terms):
+        row['FORMUL'] = doc[FORMUL[1]+1:DV[0]].text.strip()
+    if not any(word in doc[DV[1]+1:TIPO[0]].text.strip() for word in terms):
+        row['DV'] = doc[DV[1]+1:TIPO[0]].text.strip()
+    if not any(word in doc[TIPO[1]+1:NOME[0]].text.replace('\n','').strip() for word in terms):
+        row['TIPO'] = doc[TIPO[1]+1:NOME[0]].text.replace('\n','').strip()
+    if not any(word in doc[NOME[1]+1:ENDEREÇO[0]].text.replace('\n','').strip() for word in terms):
+        row['NOME'] = doc[NOME[1]+1:ENDEREÇO[0]].text.replace('\n','').strip()
+    if not any(word in doc[ENDEREÇO[1]+1:MUNICIPIO[0]].text.replace('\n','').strip() for word in terms):
+        row['ENDEREÇO'] = doc[ENDEREÇO[1]+1:MUNICIPIO[0]].text.replace('\n','').strip()
+    if not any(word in doc[MUNICIPIO[1]+1:UF[0]].text.replace('\n','').strip() for word in terms):
+        row['MUNICIPIO'] = doc[MUNICIPIO[1]+1:UF[0]].text.replace('\n','').strip()
+    if not any(word in doc[UF[1]+1:CEP[0]].text.replace('\n','').strip() for word in terms):
+        row['UF'] = doc[UF[1]+1:CEP[0]].text.replace('\n','').strip()
+    if not any(word in doc[CEP[1]+1:SEXO[0]].text.replace('\n','').strip() for word in terms):
+        row['CEP'] = doc[CEP[1]+1:SEXO[0]].text.replace('\n','').strip()
+    if not any(word in doc[SEXO[1]+1:MORADOR[0]].text.replace('\n','').strip() for word in terms):
+        row['SEXO'] = doc[SEXO[1]+1:MORADOR[0]].text.replace('\n','').strip()
+    if not any(word in doc[MORADOR[1]+1:INSTRUÇÃO[0]].text.replace('\n','').strip() for word in terms):
+        row['MORADOR'] = doc[MORADOR[1]+1:INSTRUÇÃO[0]].text.replace('\n','').strip()
+    if not any(word in doc[INSTRUÇÃO[1]+1:ESTADO_CIVIL[0]].text.replace('\n','').strip() for word in terms):
+        row['INSTRUÇÃO'] = doc[INSTRUÇÃO[1]+1:ESTADO_CIVIL[0]].text.replace('\n','').strip()
+    if not any(word in doc[ESTADO_CIVIL[1]+1:FAIXA_ETÁRIA[0]].text.replace('\n','').strip() for word in terms):
+        row['ESTADO_CIVIL'] = doc[ESTADO_CIVIL[1]+1:FAIXA_ETÁRIA[0]].text.replace('\n','').strip()
+    if not any(word in doc[FAIXA_ETÁRIA[1]+1:FAIXA_RENDA[0]].text.replace('\n','').strip() for word in terms):
+        row['FAIXA_ETÁRIA'] = doc[FAIXA_ETÁRIA[1]+1:FAIXA_RENDA[0]].text.replace('\n','').strip()
+    if not any(word in doc[FAIXA_RENDA[1]+1:ATIVIDADE[0]].text.replace('\n','').strip() for word in terms):
+        row['FAIXA_RENDA'] = doc[FAIXA_RENDA[1]+1:ATIVIDADE[0]].text.replace('\n','').strip()
+    if not any(word in doc[ATIVIDADE[1]+1:DESTINATÁRIO[0]].text.replace('\n','').strip() for word in terms):
         row['ATIVIDADE'] = doc[ATIVIDADE[1]+1:DESTINATÁRIO[0]].text.replace('\n','').strip()
+    if not any(word in doc[DESTINATÁRIO[1]+1:CATÁLOGO[0]].text.replace('\n','').strip() for word in terms):
         row['DESTINATÁRIO'] = doc[DESTINATÁRIO[1]+1:CATÁLOGO[0]].text.replace('\n','').strip()
-    except NameError:
-        pass
-    row['CATÁLOGO'] = doc[CATÁLOGO[1]+1:INDEXAÇÃO[0]].text.replace('\n','').strip()
-    row['INDEXAÇÃO'] = doc[INDEXAÇÃO[1]+1:SUGESTÃO[0]].text.replace('\n','').strip()
-    row['SUGESTÃO'] = doc[SUGESTÃO[1]+1:].text.replace('\n','').strip()
+    if not any(word in doc[CATÁLOGO[1]+1:INDEXAÇÃO[0]].text.replace('\n','').strip() for word in terms):
+        row['CATÁLOGO'] = doc[CATÁLOGO[1]+1:INDEXAÇÃO[0]].text.replace('\n','').strip()
+    if not any(word in doc[INDEXAÇÃO[1]+1:SUGESTÃO[0]].text.replace('\n','').strip() for word in terms):
+        row['INDEXAÇÃO'] = doc[INDEXAÇÃO[1]+1:SUGESTÃO[0]].text.replace('\n','').strip()
+    if not any(word in doc[SUGESTÃO[1]+1:].text.replace('\n','').strip() for word in terms):
+        row['SUGESTÃO'] = doc[SUGESTÃO[1]+1:].text.replace('\n','').strip()
+    else:
+        errors.append(person)
     df_data.append(row)
 df = pd.DataFrame(df_data)
-print(df.head())
+df.to_csv('SAIC.tsv',sep='\t')
