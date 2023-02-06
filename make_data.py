@@ -97,19 +97,19 @@ for person in tqdm(data.keys(), total=len(list(data.keys()))):
     if not any(word in doc[NOME[1]+1:ENDEREÇO[0]].text.replace('\n','').strip() for word in terms):
         row['NOME'] = doc[NOME[1]+1:ENDEREÇO[0]].text.replace('\n','').strip()
     if not any(word in doc[ENDEREÇO[1]+1:MUNICIPIO[0]].text.replace('\n','').strip() for word in terms):
-        row['ENDEREÇO'] = doc[ENDEREÇO[1]+1:MUNICIPIO[0]].text.replace('\n','').strip()
+        row['ENDEREÇO'] = doc[ENDEREÇO[1]+1:MUNICIPIO[0]].text.replace('\n','').replace('LOCALIZAÇÃO','').strip()
     if not any(word in doc[MUNICIPIO[1]+1:UF[0]].text.replace('\n','').strip() for word in terms):
         row['MUNICIPIO'] = doc[MUNICIPIO[1]+1:UF[0]].text.replace('\n','').strip()
     if not any(word in doc[UF[1]+1:CEP[0]].text.replace('\n','').strip() for word in terms):
         row['UF'] = doc[UF[1]+1:CEP[0]].text.replace('\n','').strip()
     if not any(word in doc[CEP[1]+1:SEXO[0]].text.replace('\n','').strip() for word in terms):
-        row['CEP'] = doc[CEP[1]+1:SEXO[0]].text.replace('\n','').strip()
+        row['CEP'] = doc[CEP[1]+1:SEXO[0]].text.replace('\n','').replace('DADOS PESSOAIS','').strip()
     if not any(word in doc[SEXO[1]+1:MORADOR[0]].text.replace('\n','').strip() for word in terms):
-        row['SEXO'] = doc[SEXO[1]+1:MORADOR[0]].text.replace('\n','').strip()
+        row['SEXO'] = doc[SEXO[1]+1:MORADOR[0]].text.replace('\n','').replace(':','').strip()
     if not any(word in doc[MORADOR[1]+1:INSTRUÇÃO[0]].text.replace('\n','').strip() for word in terms):
-        row['MORADOR'] = doc[MORADOR[1]+1:INSTRUÇÃO[0]].text.replace('\n','').strip()
+        row['MORADOR'] = doc[MORADOR[1]+1:INSTRUÇÃO[0]].text.replace('\n','').replace(':','').strip()
     if not any(word in doc[INSTRUÇÃO[1]+1:ESTADO_CIVIL[0]].text.replace('\n','').strip() for word in terms):
-        row['INSTRUÇÃO'] = doc[INSTRUÇÃO[1]+1:ESTADO_CIVIL[0]].text.replace('\n','').strip()
+        row['INSTRUÇÃO'] = doc[INSTRUÇÃO[1]+1:ESTADO_CIVIL[0]].text.replace('\n','').replace(':','').strip()
     if not any(word in doc[ESTADO_CIVIL[1]+1:FAIXA_ETÁRIA[0]].text.replace('\n','').strip() for word in terms):
         row['ESTADO_CIVIL'] = doc[ESTADO_CIVIL[1]+1:FAIXA_ETÁRIA[0]].text.replace('\n','').strip()
     if not any(word in doc[FAIXA_ETÁRIA[1]+1:FAIXA_RENDA[0]].text.replace('\n','').strip() for word in terms):
@@ -119,7 +119,7 @@ for person in tqdm(data.keys(), total=len(list(data.keys()))):
     if not any(word in doc[ATIVIDADE[1]+1:DESTINATÁRIO[0]].text.replace('\n','').strip() for word in terms):
         row['ATIVIDADE'] = doc[ATIVIDADE[1]+1:DESTINATÁRIO[0]].text.replace('\n','').strip()
     if not any(word in doc[DESTINATÁRIO[1]+1:CATÁLOGO[0]].text.replace('\n','').strip() for word in terms):
-        row['DESTINATÁRIO'] = doc[DESTINATÁRIO[1]+1:CATÁLOGO[0]].text.replace('\n','').strip()
+        row['DESTINATÁRIO'] = doc[DESTINATÁRIO[1]+1:CATÁLOGO[0]].text.replace('\n','').replace(':','').strip()
     if not any(word in doc[CATÁLOGO[1]+1:INDEXAÇÃO[0]].text.replace('\n','').strip() for word in terms):
         row['CATÁLOGO'] = doc[CATÁLOGO[1]+1:INDEXAÇÃO[0]].text.replace('\n','').strip()
     if not any(word in doc[INDEXAÇÃO[1]+1:SUGESTÃO[0]].text.replace('\n','').strip() for word in terms):
@@ -131,3 +131,6 @@ for person in tqdm(data.keys(), total=len(list(data.keys()))):
     df_data.append(row)
 df = pd.DataFrame(df_data)
 df.to_csv('SAIC.tsv',sep='\t')
+print(len(errors),' errors')
+srsly.write_jsonl('errors.txt',errors)
+## Notes 
