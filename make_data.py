@@ -117,7 +117,7 @@ for person in tqdm(data.keys(), total=len(list(data.keys()))):
     if not any(word in doc[FAIXA_RENDA[1]+1:ATIVIDADE[0]].text.replace('\n','').strip() for word in terms):
         row['FAIXA_RENDA'] = doc[FAIXA_RENDA[1]+1:ATIVIDADE[0]].text.replace('\n','').strip()
     if not any(word in doc[ATIVIDADE[1]+1:DESTINATÁRIO[0]].text.replace('\n','').strip() for word in terms):
-        row['ATIVIDADE'] = doc[ATIVIDADE[1]+1:DESTINATÁRIO[0]].text.replace('\n','').strip()
+        row['ATIVIDADE'] = doc[ATIVIDADE[1]+1:DESTINATÁRIO[0]].text.replace('\n','').replace(':','').strip()
     if not any(word in doc[DESTINATÁRIO[1]+1:CATÁLOGO[0]].text.replace('\n','').strip() for word in terms):
         row['DESTINATÁRIO'] = doc[DESTINATÁRIO[1]+1:CATÁLOGO[0]].text.replace('\n','').replace(':','').strip()
     if not any(word in doc[CATÁLOGO[1]+1:INDEXAÇÃO[0]].text.replace('\n','').strip() for word in terms):
